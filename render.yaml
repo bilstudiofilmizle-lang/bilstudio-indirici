@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: bilstudio-indirici
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: ALLOWED_ORIGIN
+        value: "*"        # Siten hazır olunca kendi adresinle değiştir: https://senin-siten.pages.dev
+      - key: MAX_CONCURRENT
+        value: "2"
+      - key: MAX_FILESIZE_MB
+        value: "1024"     # Ücretsiz planda disk az, büyük dosyalarda 1 GB güvenli
